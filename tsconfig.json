@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": "modules",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "paths": {
+      "@assistant-ts-client/*": ["*/src"]
+    }
+  },
+  "include": [
+    "replikit.config.ts",
+    "momodules/**/*.tsdules"
+  ]
+}
