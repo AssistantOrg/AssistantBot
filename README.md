@@ -1,2 +1,2 @@
-# AssistantApiBotClient
+# Assistant bot client
 by replikit
