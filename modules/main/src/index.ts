@@ -34,10 +34,6 @@ router.of("message:received").use(async context => {
     var builder = new MessageBuilder()
       .addText(data.Text);
 
-    //builder.addAttachmentByUrl(AttachmentType.Video, "https://romanflx.000webhostapp.com/video_6.mp4");
-
-    //builder.addAttachmentByUrl(AttachmentType.Photo, "https://i.ytimg.com/vi/et4xUWhz0X0/maxresdefault.jpg");
-
     if (attachment != null)
     {
       switch (attachment.Name) {
