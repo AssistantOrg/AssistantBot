@@ -28,7 +28,7 @@ router.of("message:received").use(async context => {
     }
     
     const data = await result.json();
-    console.log(data);
+    console.log(JSON.stringify(data, null, "  "));
     const attachment = data.Attachment;
 
     var builder = new MessageBuilder()
@@ -47,9 +47,19 @@ router.of("message:received").use(async context => {
           });
           break;
         case "ImagesAttachment":
+          let bld = new MessageBuilder();
           attachment.Images.forEach((e:any) => {
-            builder.addAttachmentByUrl(AttachmentType.Photo, e.ImageLink);
+            bld.addToken({
+              kind: TextTokenKind.Link,
+              text: e.Text,
+              url: e.SourceLink,
+              props: []
+            });
+
+            bld.addAttachmentByUrl(AttachmentType.Photo, e.SourceImage.Link);
+            bld.addText("\n\n");
           });
+          context.reply(bld);
           break;
       }
     }
