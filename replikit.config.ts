@@ -3,6 +3,7 @@ import { Configuration } from "@replikit/core/typings";
 import "@replikit/vk";
 import "@replikit/telegram";
 import "@replikit/discord";
+import "@replikit/storage";
 import "@assistant-ts-client/main"
 
 const config: Configuration = {
@@ -15,6 +16,9 @@ const config: Configuration = {
   },
   discord: {
     token: process.env.DC_TOKEN!
+  },
+  storage: {
+    connection: process.env.DB_STRING!
   }
 }
 
